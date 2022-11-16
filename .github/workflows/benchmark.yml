@@ -1,4 +1,4 @@
-name: Test
+name: Benchmark
 on:
   workflow_dispatch:
 
@@ -27,6 +27,8 @@ jobs:
           components: rustfmt
           target: wasm32-unknown-unknown
           default: true
+      - name: Setup cmake
+        uses: jwlawson/actions-setup-cmake@v1.12
       - name: Run benchmark
         run: |
           cargo run \
