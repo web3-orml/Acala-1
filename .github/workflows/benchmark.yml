@@ -45,4 +45,11 @@ jobs:
             --execution=wasm --wasm-execution=compiled \
             --heap-pages=4096 \
             --template=./templates/runtime-weight-template.hbs \
-            --output=./runtime/acala/src/weights/
+            --output=./runtime/acala/src/weights/ > output.txt
+
+      - name: Save output as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Benchmark result
+          path: |
+            output.txt
