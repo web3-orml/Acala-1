@@ -1,0 +1,45 @@
+name: Test
+on:
+  workflow_dispatch:
+
+jobs:
+  clean-up-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        # Only cancel non-master branch runs
+        if: ${{ github.ref != 'refs/heads/master' }}
+        uses: styfle/cancel-workflow-action@0.11.0
+        with:
+          access_token: ${{ github.token }}
+  build:
+    runs-on: [self-hosted]
+    needs: clean-up-actions
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+      - name: Install toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: nightly-2022-08-05
+          components: rustfmt
+          target: wasm32-unknown-unknown
+          default: true
+      - name: Run benchmark
+        run: |
+          cargo run \
+            --bin=acala \
+            --features=runtime-benchmarks \
+            --features=with-acala-runtime \
+            --features=on-chain-release-build \
+            -- benchmark pallet \
+            --chain=acala-dev \
+            --steps=50 --repeat=20 \
+            --pallet="${PALLET:=*}" \
+            --extrinsic="${EXTRINSIC:=*}" \
+            --execution=wasm --wasm-execution=compiled \
+            --heap-pages=4096 \
+            --template=./templates/runtime-weight-template.hbs \
+            --output=./runtime/acala/src/weights/
