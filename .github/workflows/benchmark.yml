@@ -29,27 +29,33 @@ jobs:
           default: true
       - name: Setup cmake
         uses: jwlawson/actions-setup-cmake@v1.12
-      - name: Run benchmark
+#       - name: Run benchmark
+#         run: |
+#           cargo run \
+#             --profile production \
+#             --bin=acala \
+#             --features=runtime-benchmarks \
+#             --features=with-acala-runtime \
+#             --features=on-chain-release-build \
+#             -- benchmark pallet \
+#             --chain=acala-dev \
+#             --steps=50 --repeat=20 \
+#             --pallet="${PALLET:=*}" \
+#             --extrinsic="${EXTRINSIC:=*}" \
+#             --execution=wasm --wasm-execution=compiled \
+#             --heap-pages=4096 \
+#             --template=./templates/runtime-weight-template.hbs \
+#             --output=./runtime/acala/src/weights/ > output.txt
+            
+      - name: Commit and push
         run: |
-          cargo run \
-            --profile production \
-            --bin=acala \
-            --features=runtime-benchmarks \
-            --features=with-acala-runtime \
-            --features=on-chain-release-build \
-            -- benchmark pallet \
-            --chain=acala-dev \
-            --steps=50 --repeat=20 \
-            --pallet="${PALLET:=*}" \
-            --extrinsic="${EXTRINSIC:=*}" \
-            --execution=wasm --wasm-execution=compiled \
-            --heap-pages=4096 \
-            --template=./templates/runtime-weight-template.hbs \
-            --output=./runtime/acala/src/weights/ > output.txt
+          git add ./runtime/
+          # git commit -m "Benchmark"
+          echo "https://${{ github.token }}@github.com/${{ GITHUB_REPOSITORY }}.git" ${{ GITHUB_REF_NAME }}
 
-      - name: Save output as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Benchmark result
-          path: |
-            output.txt
+#       - name: Save output as artifact
+#         uses: actions/upload-artifact@v2
+#         with:
+#           name: Benchmark result
+#           path: |
+#             output.txt
