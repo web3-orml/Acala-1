@@ -51,6 +51,8 @@ jobs:
         run: |
           echo "\n" >> ./runtime/acala/src/weights/mod.rs
           git add ./runtime/
+          git config --global user.email "hello@acala.network"
+          git config --global user.name "Acala Benchmarking Bot"
           git commit -m "Benchmark"
           echo "https://${{ github.token }}@github.com/${{ github.repository }}.git" ${{ github.ref_name }}
 
