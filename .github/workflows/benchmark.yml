@@ -49,8 +49,9 @@ jobs:
             
       - name: Commit and push
         run: |
+          echo "\n" >> /runtime/acala/src/weights/mod.rs
           git add ./runtime/
-          # git commit -m "Benchmark"
+          git commit -m "Benchmark"
           echo "https://${{ github.token }}@github.com/${{ github.repository }}.git" ${{ github.ref_name }}
 
 #       - name: Save output as artifact
