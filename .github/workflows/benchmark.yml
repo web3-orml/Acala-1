@@ -51,7 +51,7 @@ jobs:
         run: |
           git add ./runtime/
           # git commit -m "Benchmark"
-          echo "https://${{ github.token }}@github.com/${{ GITHUB_REPOSITORY }}.git" ${{ GITHUB_REF_NAME }}
+          echo "https://${{ github.token }}@github.com/${{ github.repository }}.git" ${{ github.ref_name }}
 
 #       - name: Save output as artifact
 #         uses: actions/upload-artifact@v2
