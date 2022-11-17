@@ -54,7 +54,7 @@ jobs:
           git config --global user.email "hello@acala.network"
           git config --global user.name "Acala Benchmarking Bot"
           git commit -m "Benchmark"
-          echo "https://${{ github.token }}@github.com/${{ github.repository }}.git" ${{ github.ref_name }}
+          git push "https://${{ github.token }}@github.com/${{ github.repository }}.git" ${{ github.ref_name }}
 
 #       - name: Save output as artifact
 #         uses: actions/upload-artifact@v2
