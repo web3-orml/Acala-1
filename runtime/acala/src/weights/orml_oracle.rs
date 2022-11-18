@@ -53,9 +53,9 @@ impl<T: frame_system::Config> orml_oracle::WeightInfo for WeightInfo<T> {
 	// Storage: AcalaOracle Values (r:1 w:0)
 	// Storage: AcalaOracle RawValues (r:0 w:1)
 	fn feed_values(c: u32, ) -> Weight {
-		(16_088_000 as Weight)
-			// Standard Error: 29_000
-			.saturating_add((6_142_000 as Weight).saturating_mul(c as Weight))
+		(15_964_000 as Weight)
+			// Standard Error: 31_000
+			.saturating_add((6_061_000 as Weight).saturating_mul(c as Weight))
 			.saturating_add(T::DbWeight::get().reads(2 as Weight))
 			.saturating_add(T::DbWeight::get().reads((1 as Weight).saturating_mul(c as Weight)))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
@@ -63,7 +63,7 @@ impl<T: frame_system::Config> orml_oracle::WeightInfo for WeightInfo<T> {
 	}
 	// Storage: AcalaOracle HasDispatched (r:0 w:1)
 	fn on_finalize() -> Weight {
-		(2_949_000 as Weight)
+		(2_891_000 as Weight)
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
 }

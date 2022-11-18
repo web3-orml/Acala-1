@@ -52,27 +52,27 @@ impl<T: frame_system::Config> module_asset_registry::WeightInfo for WeightInfo<T
 	// Storage: AssetRegistry ForeignAssetLocations (r:1 w:1)
 	// Storage: AssetRegistry AssetMetadatas (r:1 w:1)
 	fn register_foreign_asset() -> Weight {
-		(23_500_000 as Weight)
+		(23_390_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(4 as Weight))
 			.saturating_add(T::DbWeight::get().writes(4 as Weight))
 	}
 	// Storage: AssetRegistry ForeignAssetLocations (r:1 w:1)
 	// Storage: AssetRegistry AssetMetadatas (r:1 w:1)
 	fn update_foreign_asset() -> Weight {
-		(20_114_000 as Weight)
+		(20_418_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(2 as Weight))
 			.saturating_add(T::DbWeight::get().writes(2 as Weight))
 	}
 	// Storage: AssetRegistry NextStableAssetId (r:1 w:1)
 	// Storage: AssetRegistry AssetMetadatas (r:1 w:1)
 	fn register_stable_asset() -> Weight {
-		(17_859_000 as Weight)
+		(17_412_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(2 as Weight))
 			.saturating_add(T::DbWeight::get().writes(2 as Weight))
 	}
 	// Storage: AssetRegistry AssetMetadatas (r:1 w:1)
 	fn update_stable_asset() -> Weight {
-		(16_459_000 as Weight)
+		(16_022_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
@@ -82,25 +82,25 @@ impl<T: frame_system::Config> module_asset_registry::WeightInfo for WeightInfo<T
 	// Storage: AssetRegistry AssetMetadatas (r:1 w:1)
 	// Storage: AssetRegistry Erc20IdToAddress (r:1 w:1)
 	fn register_erc20_asset() -> Weight {
-		(240_710_000 as Weight)
+		(237_352_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(10 as Weight))
 			.saturating_add(T::DbWeight::get().writes(2 as Weight))
 	}
 	// Storage: AssetRegistry AssetMetadatas (r:1 w:1)
 	fn update_erc20_asset() -> Weight {
-		(22_817_000 as Weight)
+		(23_013_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
 	// Storage: AssetRegistry AssetMetadatas (r:1 w:1)
 	fn register_native_asset() -> Weight {
-		(15_255_000 as Weight)
+		(15_067_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
 	// Storage: AssetRegistry AssetMetadatas (r:1 w:1)
 	fn update_native_asset() -> Weight {
-		(16_141_000 as Weight)
+		(16_148_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}

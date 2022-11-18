@@ -48,13 +48,13 @@ use sp_std::marker::PhantomData;
 pub struct WeightInfo<T>(PhantomData<T>);
 impl<T: frame_system::Config> orml_authority::WeightInfo for WeightInfo<T> {
 	fn dispatch_as() -> Weight {
-		(12_620_000 as Weight)
+		(12_561_000 as Weight)
 	}
 	// Storage: Authority NextTaskIndex (r:1 w:1)
 	// Storage: Scheduler Lookup (r:1 w:1)
 	// Storage: Scheduler Agenda (r:1 w:1)
 	fn schedule_dispatch_without_delay() -> Weight {
-		(25_083_000 as Weight)
+		(24_529_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(3 as Weight))
 			.saturating_add(T::DbWeight::get().writes(3 as Weight))
 	}
@@ -62,45 +62,45 @@ impl<T: frame_system::Config> orml_authority::WeightInfo for WeightInfo<T> {
 	// Storage: Scheduler Lookup (r:1 w:1)
 	// Storage: Scheduler Agenda (r:1 w:1)
 	fn schedule_dispatch_with_delay() -> Weight {
-		(25_119_000 as Weight)
+		(25_229_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(3 as Weight))
 			.saturating_add(T::DbWeight::get().writes(3 as Weight))
 	}
 	// Storage: Scheduler Lookup (r:1 w:1)
 	// Storage: Scheduler Agenda (r:2 w:2)
 	fn fast_track_scheduled_dispatch() -> Weight {
-		(31_378_000 as Weight)
+		(31_565_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(3 as Weight))
 			.saturating_add(T::DbWeight::get().writes(3 as Weight))
 	}
 	// Storage: Scheduler Lookup (r:1 w:1)
 	// Storage: Scheduler Agenda (r:2 w:2)
 	fn delay_scheduled_dispatch() -> Weight {
-		(31_237_000 as Weight)
+		(30_696_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(3 as Weight))
 			.saturating_add(T::DbWeight::get().writes(3 as Weight))
 	}
 	// Storage: Scheduler Lookup (r:1 w:1)
 	// Storage: Scheduler Agenda (r:1 w:1)
 	fn cancel_scheduled_dispatch() -> Weight {
-		(23_416_000 as Weight)
+		(23_115_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(2 as Weight))
 			.saturating_add(T::DbWeight::get().writes(2 as Weight))
 	}
 	// Storage: Authority SavedCalls (r:0 w:1)
 	fn authorize_call() -> Weight {
-		(13_058_000 as Weight)
+		(12_486_000 as Weight)
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
 	// Storage: Authority SavedCalls (r:1 w:1)
 	fn remove_authorized_call() -> Weight {
-		(14_983_000 as Weight)
+		(14_492_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
 	// Storage: Authority SavedCalls (r:1 w:1)
 	fn trigger_call() -> Weight {
-		(19_383_000 as Weight)
+		(19_140_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}

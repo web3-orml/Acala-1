@@ -51,14 +51,14 @@ impl<T: frame_system::Config> module_currencies::WeightInfo for WeightInfo<T> {
 	// Storage: EvmAccounts EvmAddresses (r:1 w:0)
 	// Storage: System Account (r:1 w:1)
 	fn transfer_non_native_currency() -> Weight {
-		(43_691_000 as Weight)
+		(43_346_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(4 as Weight))
 			.saturating_add(T::DbWeight::get().writes(3 as Weight))
 	}
 	// Storage: System Account (r:1 w:1)
 	// Storage: EvmAccounts EvmAddresses (r:1 w:0)
 	fn transfer_native_currency() -> Weight {
-		(35_327_000 as Weight)
+		(34_630_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(2 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
@@ -66,29 +66,29 @@ impl<T: frame_system::Config> module_currencies::WeightInfo for WeightInfo<T> {
 	// Storage: Tokens TotalIssuance (r:1 w:1)
 	// Storage: System Account (r:1 w:1)
 	fn update_balance_non_native_currency() -> Weight {
-		(26_785_000 as Weight)
+		(26_058_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(3 as Weight))
 			.saturating_add(T::DbWeight::get().writes(3 as Weight))
 	}
 	// Storage: System Account (r:1 w:1)
 	fn update_balance_native_currency_creating() -> Weight {
-		(25_707_000 as Weight)
+		(24_803_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
 	// Storage: System Account (r:1 w:1)
 	// Storage: EvmAccounts EvmAddresses (r:1 w:0)
 	fn update_balance_native_currency_killing() -> Weight {
-		(25_584_000 as Weight)
+		(25_427_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(2 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
 	// Storage: Tokens Accounts (r:2 w:2)
 	// Storage: System Account (r:1 w:1)
 	fn sweep_dust(c: u32, ) -> Weight {
-		(12_486_000 as Weight)
-			// Standard Error: 29_000
-			.saturating_add((19_659_000 as Weight).saturating_mul(c as Weight))
+		(11_943_000 as Weight)
+			// Standard Error: 30_000
+			.saturating_add((19_605_000 as Weight).saturating_mul(c as Weight))
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().reads((2 as Weight).saturating_mul(c as Weight)))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
@@ -98,7 +98,7 @@ impl<T: frame_system::Config> module_currencies::WeightInfo for WeightInfo<T> {
 	// Storage: Tokens Accounts (r:1 w:1)
 	// Storage: System Account (r:1 w:1)
 	fn force_set_lock() -> Weight {
-		(25_240_000 as Weight)
+		(25_068_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(3 as Weight))
 			.saturating_add(T::DbWeight::get().writes(3 as Weight))
 	}
@@ -106,7 +106,7 @@ impl<T: frame_system::Config> module_currencies::WeightInfo for WeightInfo<T> {
 	// Storage: Tokens Accounts (r:1 w:1)
 	// Storage: System Account (r:1 w:1)
 	fn force_remove_lock() -> Weight {
-		(24_936_000 as Weight)
+		(24_868_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(3 as Weight))
 			.saturating_add(T::DbWeight::get().writes(3 as Weight))
 	}
