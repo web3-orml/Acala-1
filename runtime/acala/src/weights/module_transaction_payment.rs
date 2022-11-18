@@ -50,7 +50,7 @@ impl<T: frame_system::Config> module_transaction_payment::WeightInfo for WeightI
 	// Storage: Balances Reserves (r:1 w:1)
 	// Storage: TransactionPayment AlternativeFeeSwapPath (r:0 w:1)
 	fn set_alternative_fee_swap_path() -> Weight {
-		(25_496_000 as Weight)
+		(24_786_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes(2 as Weight))
 	}
@@ -64,7 +64,7 @@ impl<T: frame_system::Config> module_transaction_payment::WeightInfo for WeightI
 	// Storage: TransactionPayment TokenExchangeRate (r:0 w:1)
 	// Storage: TransactionPayment SwapBalanceThreshold (r:0 w:1)
 	fn enable_charge_fee_pool() -> Weight {
-		(90_565_000 as Weight)
+		(90_203_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(12 as Weight))
 			.saturating_add(T::DbWeight::get().writes(7 as Weight))
 	}
@@ -76,26 +76,26 @@ impl<T: frame_system::Config> module_transaction_payment::WeightInfo for WeightI
 	// Storage: TransactionPayment GlobalFeeSwapPath (r:0 w:1)
 	// Storage: TransactionPayment PoolSize (r:0 w:1)
 	fn disable_charge_fee_pool() -> Weight {
-		(66_240_000 as Weight)
+		(66_602_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(6 as Weight))
 			.saturating_add(T::DbWeight::get().writes(8 as Weight))
 	}
 	fn with_fee_path() -> Weight {
-		(5_788_000 as Weight)
+		(5_866_000 as Weight)
 	}
 	fn with_fee_currency() -> Weight {
-		(6_168_000 as Weight)
+		(6_076_000 as Weight)
 	}
 	fn with_fee_aggregated_path() -> Weight {
-		(6_460_000 as Weight)
+		(6_554_000 as Weight)
 	}
 	fn with_fee_paid_by() -> Weight {
-		(4_406_000 as Weight)
+		(4_427_000 as Weight)
 	}
 	// Storage: TransactionPayment NextFeeMultiplier (r:1 w:1)
 	// Storage: System BlockWeight (r:1 w:0)
 	fn on_finalize() -> Weight {
-		(7_238_000 as Weight)
+		(7_244_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(2 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}

@@ -52,9 +52,9 @@ impl<T: frame_system::Config> module_aggregated_dex::WeightInfo for WeightInfo<T
 	// Storage: System Account (r:1 w:1)
 	// Storage: Tokens Accounts (r:2 w:2)
 	fn swap_with_exact_supply(u: u32, ) -> Weight {
-		(47_419_000 as Weight)
-			// Standard Error: 58_000
-			.saturating_add((11_559_000 as Weight).saturating_mul(u as Weight))
+		(47_754_000 as Weight)
+			// Standard Error: 57_000
+			.saturating_add((11_299_000 as Weight).saturating_mul(u as Weight))
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().reads((2 as Weight).saturating_mul(u as Weight)))
 			.saturating_add(T::DbWeight::get().writes(2 as Weight))
@@ -65,9 +65,9 @@ impl<T: frame_system::Config> module_aggregated_dex::WeightInfo for WeightInfo<T
 	// Storage: System Account (r:1 w:1)
 	// Storage: Tokens Accounts (r:2 w:2)
 	fn swap_with_exact_target(u: u32, ) -> Weight {
-		(45_779_000 as Weight)
-			// Standard Error: 65_000
-			.saturating_add((16_555_000 as Weight).saturating_mul(u as Weight))
+		(44_384_000 as Weight)
+			// Standard Error: 67_000
+			.saturating_add((16_843_000 as Weight).saturating_mul(u as Weight))
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().reads((2 as Weight).saturating_mul(u as Weight)))
 			.saturating_add(T::DbWeight::get().writes(2 as Weight))
@@ -75,9 +75,9 @@ impl<T: frame_system::Config> module_aggregated_dex::WeightInfo for WeightInfo<T
 	}
 	// Storage: AggregatedDex AggregatedSwapPaths (r:0 w:1)
 	fn update_aggregated_swap_paths(n: u32, ) -> Weight {
-		(3_185_000 as Weight)
-			// Standard Error: 10_000
-			.saturating_add((1_390_000 as Weight).saturating_mul(n as Weight))
+		(3_165_000 as Weight)
+			// Standard Error: 9_000
+			.saturating_add((1_541_000 as Weight).saturating_mul(n as Weight))
 			.saturating_add(T::DbWeight::get().writes((1 as Weight).saturating_mul(n as Weight)))
 	}
 }

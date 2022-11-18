@@ -49,25 +49,25 @@ pub struct WeightInfo<T>(PhantomData<T>);
 impl<T: frame_system::Config> module_transaction_pause::WeightInfo for WeightInfo<T> {
 	// Storage: TransactionPause PausedTransactions (r:1 w:1)
 	fn pause_transaction() -> Weight {
-		(15_222_000 as Weight)
+		(15_016_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
 	// Storage: TransactionPause PausedTransactions (r:1 w:1)
 	fn unpause_transaction() -> Weight {
-		(15_834_000 as Weight)
+		(15_516_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
 	// Storage: TransactionPause PausedEvmPrecompiles (r:1 w:1)
 	fn pause_evm_precompile() -> Weight {
-		(14_856_000 as Weight)
+		(14_642_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
 	// Storage: TransactionPause PausedEvmPrecompiles (r:1 w:1)
 	fn unpause_evm_precompile() -> Weight {
-		(15_604_000 as Weight)
+		(15_576_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}

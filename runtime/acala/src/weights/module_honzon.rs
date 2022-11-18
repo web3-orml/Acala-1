@@ -50,23 +50,23 @@ impl<T: frame_system::Config> module_honzon::WeightInfo for WeightInfo<T> {
 	// Storage: Honzon Authorization (r:1 w:1)
 	// Storage: Balances Reserves (r:1 w:1)
 	fn authorize() -> Weight {
-		(29_203_000 as Weight)
+		(29_054_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(2 as Weight))
 			.saturating_add(T::DbWeight::get().writes(2 as Weight))
 	}
 	// Storage: Honzon Authorization (r:1 w:1)
 	// Storage: Balances Reserves (r:1 w:1)
 	fn unauthorize() -> Weight {
-		(30_767_000 as Weight)
+		(29_663_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(2 as Weight))
 			.saturating_add(T::DbWeight::get().writes(2 as Weight))
 	}
 	// Storage: Balances Reserves (r:1 w:0)
 	// Storage: Honzon Authorization (r:0 w:1)
 	fn unauthorize_all(c: u32, ) -> Weight {
-		(20_876_000 as Weight)
-			// Standard Error: 135_000
-			.saturating_add((5_522_000 as Weight).saturating_mul(c as Weight))
+		(20_359_000 as Weight)
+			// Standard Error: 134_000
+			.saturating_add((5_457_000 as Weight).saturating_mul(c as Weight))
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes((1 as Weight).saturating_mul(c as Weight)))
 	}
@@ -84,7 +84,7 @@ impl<T: frame_system::Config> module_honzon::WeightInfo for WeightInfo<T> {
 	// Storage: AcalaOracle Values (r:1 w:0)
 	// Storage: AssetRegistry AssetMetadatas (r:2 w:0)
 	fn adjust_loan() -> Weight {
-		(102_042_000 as Weight)
+		(101_596_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(15 as Weight))
 			.saturating_add(T::DbWeight::get().writes(7 as Weight))
 	}
@@ -101,7 +101,7 @@ impl<T: frame_system::Config> module_honzon::WeightInfo for WeightInfo<T> {
 	// Storage: System Account (r:1 w:1)
 	// Storage: Loans TotalPositions (r:1 w:1)
 	fn transfer_loan_from() -> Weight {
-		(85_813_000 as Weight)
+		(85_689_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(16 as Weight))
 			.saturating_add(T::DbWeight::get().writes(7 as Weight))
 	}
@@ -129,7 +129,7 @@ impl<T: frame_system::Config> module_honzon::WeightInfo for WeightInfo<T> {
 	// Storage: Tokens TotalIssuance (r:2 w:1)
 	// Storage: Homa TotalVoidLiquid (r:1 w:0)
 	fn close_loan_has_debit_by_dex() -> Weight {
-		(488_226_000 as Weight)
+		(484_606_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(46 as Weight))
 			.saturating_add(T::DbWeight::get().writes(20 as Weight))
 	}
@@ -150,7 +150,7 @@ impl<T: frame_system::Config> module_honzon::WeightInfo for WeightInfo<T> {
 	// Storage: AcalaOracle Values (r:1 w:0)
 	// Storage: AssetRegistry AssetMetadatas (r:2 w:0)
 	fn expand_position_collateral() -> Weight {
-		(235_387_000 as Weight)
+		(233_831_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(31 as Weight))
 			.saturating_add(T::DbWeight::get().writes(12 as Weight))
 	}
@@ -172,7 +172,7 @@ impl<T: frame_system::Config> module_honzon::WeightInfo for WeightInfo<T> {
 	// Storage: Rewards PoolInfos (r:1 w:1)
 	// Storage: Loans TotalPositions (r:1 w:1)
 	fn shrink_position_debit() -> Weight {
-		(367_513_000 as Weight)
+		(370_267_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(38 as Weight))
 			.saturating_add(T::DbWeight::get().writes(18 as Weight))
 	}
@@ -189,7 +189,7 @@ impl<T: frame_system::Config> module_honzon::WeightInfo for WeightInfo<T> {
 	// Storage: Homa ToBondPool (r:1 w:0)
 	// Storage: Homa TotalVoidLiquid (r:1 w:0)
 	fn transfer_debit() -> Weight {
-		(134_623_000 as Weight)
+		(132_023_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(20 as Weight))
 			.saturating_add(T::DbWeight::get().writes(6 as Weight))
 	}
@@ -203,7 +203,7 @@ impl<T: frame_system::Config> module_honzon::WeightInfo for WeightInfo<T> {
 	// Storage: Homa TotalVoidLiquid (r:1 w:0)
 	// Storage: CdpEngine DebitExchangeRate (r:1 w:0)
 	fn precompile_get_current_collateral_ratio() -> Weight {
-		(32_155_000 as Weight)
+		(31_787_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(11 as Weight))
 	}
 }

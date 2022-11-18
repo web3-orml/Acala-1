@@ -50,9 +50,9 @@ impl<T: frame_system::Config> module_emergency_shutdown::WeightInfo for WeightIn
 	// Storage: EmergencyShutdown IsShutdown (r:1 w:1)
 	// Storage: CdpEngine CollateralParams (r:1 w:0)
 	fn emergency_shutdown(c: u32, ) -> Weight {
-		(17_908_000 as Weight)
-			// Standard Error: 12_000
-			.saturating_add((615_000 as Weight).saturating_mul(c as Weight))
+		(18_175_000 as Weight)
+			// Standard Error: 10_000
+			.saturating_add((462_000 as Weight).saturating_mul(c as Weight))
 			.saturating_add(T::DbWeight::get().reads(2 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
@@ -60,7 +60,7 @@ impl<T: frame_system::Config> module_emergency_shutdown::WeightInfo for WeightIn
 	// Storage: CdpEngine CollateralParams (r:1 w:0)
 	// Storage: EmergencyShutdown CanRefund (r:0 w:1)
 	fn open_collateral_refund() -> Weight {
-		(17_309_000 as Weight)
+		(17_364_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(2 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
@@ -70,9 +70,9 @@ impl<T: frame_system::Config> module_emergency_shutdown::WeightInfo for WeightIn
 	// Storage: Tokens Accounts (r:1 w:1)
 	// Storage: EvmAccounts EvmAddresses (r:1 w:0)
 	fn refund_collaterals(c: u32, ) -> Weight {
-		(44_214_000 as Weight)
-			// Standard Error: 23_000
-			.saturating_add((1_233_000 as Weight).saturating_mul(c as Weight))
+		(43_859_000 as Weight)
+			// Standard Error: 22_000
+			.saturating_add((1_263_000 as Weight).saturating_mul(c as Weight))
 			.saturating_add(T::DbWeight::get().reads(5 as Weight))
 			.saturating_add(T::DbWeight::get().writes(2 as Weight))
 	}

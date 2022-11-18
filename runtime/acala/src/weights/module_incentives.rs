@@ -52,9 +52,9 @@ impl<T: frame_system::Config> module_incentives::WeightInfo for WeightInfo<T> {
 	// Storage: Incentives IncentiveRewardAmounts (r:2 w:0)
 	// Storage: System Account (r:2 w:0)
 	fn on_initialize(c: u32, ) -> Weight {
-		(6_871_000 as Weight)
-			// Standard Error: 33_000
-			.saturating_add((15_604_000 as Weight).saturating_mul(c as Weight))
+		(6_826_000 as Weight)
+			// Standard Error: 36_000
+			.saturating_add((15_789_000 as Weight).saturating_mul(c as Weight))
 			.saturating_add(T::DbWeight::get().reads(3 as Weight))
 			.saturating_add(T::DbWeight::get().reads((4 as Weight).saturating_mul(c as Weight)))
 	}
@@ -64,7 +64,7 @@ impl<T: frame_system::Config> module_incentives::WeightInfo for WeightInfo<T> {
 	// Storage: Rewards PoolInfos (r:1 w:1)
 	// Storage: Rewards SharesAndWithdrawnRewards (r:1 w:1)
 	fn deposit_dex_share() -> Weight {
-		(56_152_000 as Weight)
+		(56_577_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(6 as Weight))
 			.saturating_add(T::DbWeight::get().writes(5 as Weight))
 	}
@@ -73,7 +73,7 @@ impl<T: frame_system::Config> module_incentives::WeightInfo for WeightInfo<T> {
 	// Storage: System Account (r:1 w:0)
 	// Storage: Rewards PoolInfos (r:1 w:1)
 	fn withdraw_dex_share() -> Weight {
-		(53_922_000 as Weight)
+		(55_171_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(5 as Weight))
 			.saturating_add(T::DbWeight::get().writes(4 as Weight))
 	}
@@ -84,23 +84,23 @@ impl<T: frame_system::Config> module_incentives::WeightInfo for WeightInfo<T> {
 	// Storage: System Account (r:1 w:1)
 	// Storage: EvmAccounts EvmAddresses (r:1 w:0)
 	fn claim_rewards() -> Weight {
-		(57_851_000 as Weight)
+		(58_606_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(6 as Weight))
 			.saturating_add(T::DbWeight::get().writes(4 as Weight))
 	}
 	// Storage: Incentives IncentiveRewardAmounts (r:1 w:1)
 	fn update_incentive_rewards(c: u32, ) -> Weight {
-		(5_492_000 as Weight)
-			// Standard Error: 63_000
-			.saturating_add((7_369_000 as Weight).saturating_mul(c as Weight))
+		(5_731_000 as Weight)
+			// Standard Error: 65_000
+			.saturating_add((7_271_000 as Weight).saturating_mul(c as Weight))
 			.saturating_add(T::DbWeight::get().reads((1 as Weight).saturating_mul(c as Weight)))
 			.saturating_add(T::DbWeight::get().writes((1 as Weight).saturating_mul(c as Weight)))
 	}
 	// Storage: Incentives ClaimRewardDeductionRates (r:1 w:1)
 	fn update_claim_reward_deduction_rates(c: u32, ) -> Weight {
-		(3_831_000 as Weight)
-			// Standard Error: 9_000
-			.saturating_add((2_164_000 as Weight).saturating_mul(c as Weight))
+		(3_789_000 as Weight)
+			// Standard Error: 5_000
+			.saturating_add((2_141_000 as Weight).saturating_mul(c as Weight))
 			.saturating_add(T::DbWeight::get().reads((1 as Weight).saturating_mul(c as Weight)))
 			.saturating_add(T::DbWeight::get().writes((1 as Weight).saturating_mul(c as Weight)))
 	}

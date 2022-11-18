@@ -51,25 +51,25 @@ impl<T: frame_system::Config> nutsfinance_stable_asset::WeightInfo for WeightInf
 	// Storage: StableAsset Pools (r:1 w:1)
 	// Storage: System Account (r:1 w:1)
 	fn create_pool() -> Weight {
-		(26_506_000 as Weight)
+		(26_023_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(3 as Weight))
 			.saturating_add(T::DbWeight::get().writes(3 as Weight))
 	}
 	// Storage: StableAsset Pools (r:1 w:1)
 	fn modify_a() -> Weight {
-		(18_432_000 as Weight)
+		(18_913_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
 	// Storage: StableAsset Pools (r:1 w:1)
 	fn modify_fees() -> Weight {
-		(17_653_000 as Weight)
+		(17_647_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
 	// Storage: StableAsset Pools (r:1 w:1)
 	fn modify_recipients() -> Weight {
-		(17_404_000 as Weight)
+		(17_666_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes(1 as Weight))
 	}
@@ -82,9 +82,9 @@ impl<T: frame_system::Config> nutsfinance_stable_asset::WeightInfo for WeightInf
 	// Storage: Homa ToBondPool (r:1 w:0)
 	// Storage: Homa TotalVoidLiquid (r:1 w:0)
 	fn mint(u: u32, ) -> Weight {
-		(39_485_000 as Weight)
-			// Standard Error: 366_000
-			.saturating_add((44_456_000 as Weight).saturating_mul(u as Weight))
+		(40_187_000 as Weight)
+			// Standard Error: 350_000
+			.saturating_add((43_914_000 as Weight).saturating_mul(u as Weight))
 			.saturating_add(T::DbWeight::get().reads(2 as Weight))
 			.saturating_add(T::DbWeight::get().reads((4 as Weight).saturating_mul(u as Weight)))
 			.saturating_add(T::DbWeight::get().writes(4 as Weight))
@@ -99,9 +99,9 @@ impl<T: frame_system::Config> nutsfinance_stable_asset::WeightInfo for WeightInf
 	// Storage: Homa ToBondPool (r:1 w:0)
 	// Storage: Homa TotalVoidLiquid (r:1 w:0)
 	fn swap(u: u32, ) -> Weight {
-		(86_460_000 as Weight)
-			// Standard Error: 184_000
-			.saturating_add((17_865_000 as Weight).saturating_mul(u as Weight))
+		(85_894_000 as Weight)
+			// Standard Error: 183_000
+			.saturating_add((17_546_000 as Weight).saturating_mul(u as Weight))
 			.saturating_add(T::DbWeight::get().reads(2 as Weight))
 			.saturating_add(T::DbWeight::get().reads((3 as Weight).saturating_mul(u as Weight)))
 			.saturating_add(T::DbWeight::get().writes(6 as Weight))
@@ -115,9 +115,9 @@ impl<T: frame_system::Config> nutsfinance_stable_asset::WeightInfo for WeightInf
 	// Storage: Homa ToBondPool (r:1 w:0)
 	// Storage: Homa TotalVoidLiquid (r:1 w:0)
 	fn redeem_proportion(u: u32, ) -> Weight {
-		(64_657_000 as Weight)
-			// Standard Error: 260_000
-			.saturating_add((38_715_000 as Weight).saturating_mul(u as Weight))
+		(63_118_000 as Weight)
+			// Standard Error: 242_000
+			.saturating_add((39_370_000 as Weight).saturating_mul(u as Weight))
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().reads((4 as Weight).saturating_mul(u as Weight)))
 			.saturating_add(T::DbWeight::get().writes(3 as Weight))
@@ -132,9 +132,9 @@ impl<T: frame_system::Config> nutsfinance_stable_asset::WeightInfo for WeightInf
 	// Storage: Homa ToBondPool (r:1 w:0)
 	// Storage: Homa TotalVoidLiquid (r:1 w:0)
 	fn redeem_single(u: u32, ) -> Weight {
-		(99_787_000 as Weight)
-			// Standard Error: 189_000
-			.saturating_add((17_883_000 as Weight).saturating_mul(u as Weight))
+		(98_461_000 as Weight)
+			// Standard Error: 183_000
+			.saturating_add((18_194_000 as Weight).saturating_mul(u as Weight))
 			.saturating_add(T::DbWeight::get().reads(2 as Weight))
 			.saturating_add(T::DbWeight::get().reads((3 as Weight).saturating_mul(u as Weight)))
 			.saturating_add(T::DbWeight::get().writes(5 as Weight))
@@ -148,9 +148,9 @@ impl<T: frame_system::Config> nutsfinance_stable_asset::WeightInfo for WeightInf
 	// Storage: Homa ToBondPool (r:1 w:0)
 	// Storage: Homa TotalVoidLiquid (r:1 w:0)
 	fn redeem_multi(u: u32, ) -> Weight {
-		(30_355_000 as Weight)
-			// Standard Error: 427_000
-			.saturating_add((47_569_000 as Weight).saturating_mul(u as Weight))
+		(31_740_000 as Weight)
+			// Standard Error: 443_000
+			.saturating_add((46_925_000 as Weight).saturating_mul(u as Weight))
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().reads((4 as Weight).saturating_mul(u as Weight)))
 			.saturating_add(T::DbWeight::get().writes(3 as Weight))

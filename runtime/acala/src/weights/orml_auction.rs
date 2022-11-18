@@ -54,7 +54,7 @@ impl<T: frame_system::Config> orml_auction::WeightInfo for WeightInfo<T> {
 	// Storage: EvmAccounts EvmAddresses (r:1 w:0)
 	// Storage: Auction AuctionEndTime (r:0 w:2)
 	fn bid_collateral_auction() -> Weight {
-		(83_435_000 as Weight)
+		(84_652_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(7 as Weight))
 			.saturating_add(T::DbWeight::get().writes(8 as Weight))
 	}
@@ -71,9 +71,9 @@ impl<T: frame_system::Config> orml_auction::WeightInfo for WeightInfo<T> {
 	// Storage: System Account (r:2 w:2)
 	// Storage: AuctionManager TotalTargetInAuction (r:1 w:1)
 	fn on_finalize(c: u32, ) -> Weight {
-		(27_455_000 as Weight)
-			// Standard Error: 26_000
-			.saturating_add((46_623_000 as Weight).saturating_mul(c as Weight))
+		(24_165_000 as Weight)
+			// Standard Error: 25_000
+			.saturating_add((47_057_000 as Weight).saturating_mul(c as Weight))
 			.saturating_add(T::DbWeight::get().reads(14 as Weight))
 			.saturating_add(T::DbWeight::get().reads((3 as Weight).saturating_mul(c as Weight)))
 			.saturating_add(T::DbWeight::get().writes(7 as Weight))

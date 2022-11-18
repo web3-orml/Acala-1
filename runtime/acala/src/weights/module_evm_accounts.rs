@@ -53,14 +53,14 @@ impl<T: frame_system::Config> module_evm_accounts::WeightInfo for WeightInfo<T> 
 	// Storage: System BlockHash (r:1 w:0)
 	// Storage: System Account (r:1 w:0)
 	fn claim_account() -> Weight {
-		(74_159_000 as Weight)
+		(74_822_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(5 as Weight))
 			.saturating_add(T::DbWeight::get().writes(2 as Weight))
 	}
 	// Storage: EvmAccounts EvmAddresses (r:1 w:1)
 	// Storage: EvmAccounts Accounts (r:0 w:1)
 	fn claim_default_account() -> Weight {
-		(15_709_000 as Weight)
+		(15_877_000 as Weight)
 			.saturating_add(T::DbWeight::get().reads(1 as Weight))
 			.saturating_add(T::DbWeight::get().writes(2 as Weight))
 	}
