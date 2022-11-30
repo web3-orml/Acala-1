@@ -9,10 +9,8 @@ echo "Install rust with profile '$PROFILE' and toolchain '$TOOLCHAIN'"
 
 curl https://sh.rustup.rs -sSf | sh -s -- --profile=$PROFILE -y
 
-source "$HOME/.cargo/env"
+$HOME/.cargo/bin/rustup default $TOOLCHAIN
 
-rustup default $TOOLCHAIN
-
-rustup target add wasm32-unknown-unknown --toolchain $TOOLCHAIN
+$HOME/.cargo/bin/rustup target add wasm32-unknown-unknown --toolchain $TOOLCHAIN
 
 echo "$HOME/.cargo/bin" >> $GITHUB_PATH
