@@ -1,0 +1,31 @@
+name: setup-rust
+description: Setup rustup and toolchain for github actions
+
+inputs:
+  profile:
+    description: >
+      Select rustup profile. i.e: minimal, default or complete
+    default: default
+    required: false
+
+  toolchain:
+    description: Select default toolchain version
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - name: Install rustup
+      shell: bash
+      run: |
+        curl https://sh.rustup.rs -sSf | sh -s -- --profile=${{ inputs.profile }} -y
+        source "$HOME/.cargo/env"
+
+    - name: Install toolchain
+      shell: bash
+      if: ${{ inputs.toolchain }}
+      run: |
+        rustup default ${{ inputs.toolchain }}
+        rustup target add wasm32-unknown-unknown --toolchain ${{ inputs.toolchain }}
+        echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
