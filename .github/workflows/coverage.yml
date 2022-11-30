@@ -38,7 +38,7 @@ jobs:
 #         with:
 #           submodules: recursive
       - name: Setup toolchain
-        run: .github/scripts/setup-rust.sh
+        run: sh .github/scripts/setup-rust.sh
       # - name: Setup cmake
       #   uses: jwlawson/actions-setup-cmake@v1.12
       # - name: Run cargo-tarpaulin
