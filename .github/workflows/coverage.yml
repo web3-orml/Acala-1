@@ -35,10 +35,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          submodules: recursive
+#         with:
+#           submodules: recursive
       - name: Setup toolchain
-        uses: ./.github/actions/sutup-rust
+        uses: ./.github/actions/sutup-rust/action.yml
         with:
           profile: minimal
           toolchain: nightly-2022-08-05
