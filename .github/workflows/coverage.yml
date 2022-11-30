@@ -19,53 +19,46 @@ env:
   # SCCACHE_CACHE_SIZE: "100G"
   CARGO_INCREMENTAL: 0
 jobs:
-  clean-up-actions:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Cancel Previous Runs
-        # Only cancel non-master branch runs
-        if: ${{ github.ref != 'refs/heads/master' }}
-        uses: styfle/cancel-workflow-action@0.11.0
-        with:
-          access_token: ${{ github.token }}
-  test:
+  # clean-up-actions:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Cancel Previous Runs
+  #       # Only cancel non-master branch runs
+  #       if: ${{ github.ref != 'refs/heads/master' }}
+  #       uses: styfle/cancel-workflow-action@0.11.0
+  #       with:
+  #         access_token: ${{ github.token }}
+  coverage:
     name: Coverage Report
-    runs-on: [self-hosted, linux]
-    needs: clean-up-actions
+    runs-on: ubuntu-latest
+    # needs: clean-up-actions
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          submodules: recursive
-      - name: Install toolchain
-        uses: actions-rs/toolchain@v1
+      # - name: Checkout repository
+      #   uses: actions/checkout@v3
+      #   with:
+      #     submodules: recursive
+      - name: Setup toolchain
+        uses: ./.github/actions/sutup-rust
         with:
           profile: minimal
           toolchain: nightly-2022-08-05
-          components: rustfmt
-          target: wasm32-unknown-unknown
-          default: true
-      - name: Setup cmake
-        uses: jwlawson/actions-setup-cmake@v1.12
-      # - name: Install additional dependencies
+      # - name: Setup cmake
+      #   uses: jwlawson/actions-setup-cmake@v1.12
+      # - name: Run cargo-tarpaulin
       #   run: |
-      #       sudo apt update -y &&
-      #       sudo apt install -y cmake pkg-config libssl-dev git gcc build-essential git clang libclang-dev
-      - name: Run cargo-tarpaulin
-        run: |
-          wget https://github.com/xd009642/tarpaulin/releases/download/${{ env.TARPAULIN_VERSION }}/cargo-tarpaulin-${{ env.TARPAULIN_VERSION }}-travis.tar.gz
-          tar -zxvf cargo-tarpaulin-${{ env.TARPAULIN_VERSION }}-travis.tar.gz -C $HOME/.cargo/bin
-          cargo tarpaulin -v --no-fail-fast --workspace \
-            -e acala-inspect \
-            acala acala-cli e2e-tests acala-service \
-            acala-primitives \
-            acala-rpc \
-            acala-runtime runtime-common runtime-integration-tests karura-runtime mandala-runtime \
-            test-service \
-            --exclude-files **/mock.rs **/weights.rs **/weights/*
-      - name: Upload to codecov.io
-        uses: codecov/codecov-action@v2
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: true # optional (default = false)
-          verbose: true # optional (default = false)
+      #     wget https://github.com/xd009642/tarpaulin/releases/download/${{ env.TARPAULIN_VERSION }}/cargo-tarpaulin-${{ env.TARPAULIN_VERSION }}-travis.tar.gz
+      #     tar -zxvf cargo-tarpaulin-${{ env.TARPAULIN_VERSION }}-travis.tar.gz -C $HOME/.cargo/bin
+      #     cargo tarpaulin -v --no-fail-fast --workspace \
+      #       -e acala-inspect \
+      #       acala acala-cli e2e-tests acala-service \
+      #       acala-primitives \
+      #       acala-rpc \
+      #       acala-runtime runtime-common runtime-integration-tests karura-runtime mandala-runtime \
+      #       test-service \
+      #       --exclude-files **/mock.rs **/weights.rs **/weights/*
+      # - name: Upload to codecov.io
+      #   uses: codecov/codecov-action@v2
+      #   with:
+      #     token: ${{ secrets.CODECOV_TOKEN }}
+      #     fail_ci_if_error: true # optional (default = false)
+      #     verbose: true # optional (default = false)
